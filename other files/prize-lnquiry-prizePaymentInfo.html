@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link type="text/css" rel="stylesheet" href="css/daterangepicker.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <title>活動獎項查詢-貨付款獎項資訊</title>
+    <script>
+      $(document).ready(function () {
+        // 呼叫彈窗
+        //$.PopupBox.show("該項目目前已被 王曉明 使用中，請稍後再嘗試進行編輯。", "我知道了");
+
+        // 呼叫通知
+        toastMessage("新增成功");
+
+        // 滑鼠移入觸發Tooltip
+        $(".tooltip-trigger").on("mouseenter", function () {
+          showTooltip(
+            this,
+            "GD017_eplay全通路、Z048_程式組、GD017_eplay全通路、Z048_程式組"
+          );
+        });
+
+        // 滑鼠移入隱藏並刪除Tooltip
+        $(".tooltip-trigger").on("mouseleave", function () {
+          hideTooltip(); // 滑鼠移出時隱藏 Tooltip
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <h1>PRZ00007554</h1>
+        <button class="btn"><i class="back"></i>返回上一頁</button>
+      </header>
+      <div class="search-bar">
+        <div class="col-4">
+          <label>活動ID</label>
+          <p>2024072201</p>
+        </div>
+        <div class="col-4">F
+          <label>活動名稱</label>
+          <p>參加指定活動</p>
+        </div>
+      </div>
+
+      <button class="btn-dis insert-button">新增資料 Insert New</button>
+
+      <table class="item-list col mar-spt16">
+        <thead>
+          <tr>
+            <th></th>
+            <th>獎項SN</th>
+            <th>付款金額</th>
+            <th>商品成本</th>
+            <th>取貨類型</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button class="btn-secondary">編輯</button></td>
+            <td>7558</td>
+            <td>100</td>
+            <td>50</td>
+            <td>取貨付款</td>
+          </tr>
+          <tr>
+            <td><button class="btn-secondary">編輯</button></td>
+            <td>7558</td>
+            <td>100</td>
+            <td>50</td>
+            <td>取貨付款</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

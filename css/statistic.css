@@ -1,0 +1,36 @@
+.outer {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.statistic {
+  display: flex;
+  justify-content: space-between;
+}
+.statistic_inner {
+  display: flex;
+  width: 100%;
+}
+.statistic_card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+  margin-right: 10px;
+}
+.statistic_card:last-child {
+  margin-right: 0;
+}
+.statistic_title h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+.statistic_number {
+  font-size: 50px;
+  color: #3a7bbe; /* 藍色 */
+  text-align: center;
+}

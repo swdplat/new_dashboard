@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <title>設定活動條件</title>
+    <script>
+        $(document).ready(function(){
+            // 呼叫彈窗
+            //$.PopupBox.show("該項目目前已被 王曉明 使用中，請稍後再嘗試進行編輯。", "我知道了");
+
+            // 呼叫通知
+            toastMessage('新增成功');
+
+            // 滑鼠移入觸發Tooltip
+            $('.tooltip-trigger').on('mouseenter', function () {
+                showTooltip(this, 'GD017_eplay全通路、Z048_程式組、GD017_eplay全通路、Z048_程式組');
+            })
+
+            // 滑鼠移入隱藏並刪除Tooltip
+            $('.tooltip-trigger').on('mouseleave', function () {
+                hideTooltip(); // 滑鼠移出時隱藏 Tooltip
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <button class="btn"><i class="back"></i>返回上一頁</button>
+            <h1 class="mar-Y">設定活動條件 Event Requirement</h1>
+        </header>
+        <div class="search-bar mar-tl">
+            <div class="col-4">
+                <label for="game-name">活動條件 Requirement</label>
+                <select id="game-name">
+                    <option value="" disabled>請選擇</option>
+                    <option value="線上購買" selected>線上購買</option>
+                    <option value="遊戲B">遊戲B</option>
+                    <option value="遊戲C">遊戲C</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>活動ID</label>
+                <p>2024072201</p>
+            </div>
+            <div class="col-4">
+                <label>活動名稱</label>
+                <p>參加指定活動</p>
+            </div>
+        </div>
+    
+        <button class="btn-secondary insert-button">新增資料 Insert New</button>
+    
+        <table class="item-list col">
+            <thead>
+                <tr>
+                    <th><button class="btn-secondary btn-delete-all">整批刪除</button></th>
+                    <th>廠商流水號 Merchant Code</th>
+                    <th>廠商代號</th>
+                    <th>付費廠商</th>
+                    <th>交易金額區間</th>
+                    <th>參加次數</th>
+                    <th>會員盤數領獎限制</th>
+                    <th>會員天數領獎限制</th>
+                    <th>遊戲帳號領獎次數上限</th>
+                    <th>信用卡前六碼判斷</th>
+                </tr>
+            </thead>
+            <tbody data-section="dynamic-buyOnline">
+                <tr class="data-row">
+                    <td><button class="btn-secondary btn-delete">刪除 Delete</button></td>
+                    <td>290</td>
+                    <td>2c2p001</td>
+                    <td>2c2p001_香港信用卡(下架不使用)</td>
+                    <td>23~2,000</td>
+                    <td>5</td>
+                    <td>未設定</td>
+                    <td>未設定</td>
+                    <td>未設定</td>
+                    <td>未設定</td>
+                </tr>
+                <tr class="data-row">
+                    <td><button class="btn-secondary btn-delete">刪除 Delete</button></td>
+                    <td>290</td>
+                    <td>2c2p001</td>
+                    <td>-</td>
+                    <td>23~2,000</td>
+                    <td>5</td>
+                    <td>未設定</td>
+                    <td>未設定</td>
+                    <td>未設定</td>
+                    <td>未設定</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div class="pagination">
+            <button class="first-page">第一頁</button>
+            <button class="pre-page">上一頁</button>
+            <button class="page-number active">1</button>
+            <button class="next-page">下一頁</button>
+            <button class="last-page">最後一頁</button>
+        </div>
+    </main>
+</body>
+</html>

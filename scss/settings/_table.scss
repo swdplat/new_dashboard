@@ -1,0 +1,125 @@
+table.item-list {
+    margin-bottom: 40px;
+    // width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    thead th {
+        font-weight: normal;
+        border: 1px solid #D5D7DF;
+        border-left: none;
+        border-right: none;
+        background-color: #F7F7F7;
+        white-space: nowrap;
+        padding: 10px 15px;
+        text-align: left;
+
+        &:first-child {
+            border-left: 1px solid #D5D7DF;
+            border-top-left-radius: 10px;
+            width: 124px;
+        }
+
+        &:last-child {
+            border-right: 1px solid #D5D7DF;
+            border-top-right-radius: 10px;
+        }
+
+        span {
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        img {
+            display: inline-block;
+            width: 16px;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+
+    tr {
+
+        // padding: 10px 15px;
+        &.btn-container {
+            td {
+                padding: 15px;
+
+                button.btn-primary {
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+        }
+
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #D5D7DF;
+            background-color: #FFF;
+            vertical-align: middle;
+            width: auto;
+            white-space: nowrap;
+            max-width: 385px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            &:first-child {
+                border-left: 1px solid #D5D7DF;
+                width: 80px; //讓列表的第一欄(刪除/修改)寬度符合內容寬度
+            }
+
+            &:last-child {
+                border-right: 1px solid #D5D7DF;
+            }
+
+            &.child {
+                padding: 30px;
+                background-color: #F7F7F7;
+            }
+
+            &.fit {
+                width: 80px; //讓列表欄位寬度符合內容寬度
+            }
+        }
+
+        &:last-child td:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        &:last-child td:last-child {
+            border-bottom-right-radius: 10px;
+        }
+    }
+
+    .btn-secondary {
+        padding: 5px 10px;
+        height: auto;
+    }
+}
+
+//列表展開動畫
+.child-container {
+
+    @keyframes fade {
+
+        0% {
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0.6;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    animation-name: fade;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}

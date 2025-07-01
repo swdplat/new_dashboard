@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link type="text/css" rel="stylesheet" href="css/default.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/dual-listbox.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
+    <script type="text/javascript" src="js/searchSelect.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <title>頁籤切換 Tabs</title>
+    <style>
+      /* 這是nav */
+      .nav_bar {
+        background-color: #486ef8;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.7;
+      }
+      /* 這是tab頁籤 */
+      .tabs-container .tabs-bar .tabs li {
+        height: 39px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav_bar">
+      <div class="logo">驗證碼發送查詢 DashBoard</div>
+      <div class="nav-links">
+        <a href="./template-tabs.html">頁籤部件</a>
+        <a href="./template-search_form.html">搜尋表單部件</a>
+        <a href="./template-statistic.html">資料統計欄位部件</a>
+        <a href="./template-chart.html">折線圖部件</a>
+        <a href="./template-bar.html">長條圖部件</a>
+      </div>
+    </nav>
+    <main>
+      <header class="header">
+        <h1>頁籤切換 Tabs</h1>
+      </header>
+      <form>
+        <!-- TAB -->
+        <h2>Tab</h2>
+        <div class="tabs-container">
+          <div class="tabs-bar">
+            <ul class="tabs">
+              <li class="active">即時發送查詢</li>
+              <li>發送記錄報表</li>
+              <li>超量設定</li>
+              <li>簡訊商報表</li>
+            </ul>
+          </div>
+          <div class="content">
+            <div class="tab1-content active">aaa</div>
+            <div class="tab2-content">qqq</div>
+            <div class="tab3-content">eee</div>
+            <div class="tab4-content">rrr</div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

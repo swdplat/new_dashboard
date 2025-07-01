@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="css/daterangepicker.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <title>活動獎項查詢-新增</title>
+</head>
+<style>
+    /* 這裡顯測試後面訂好的網格，可以砍掉 */
+    /* .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+    .col {
+        flex: 1;
+        padding: 0 10px;
+    } */
+</style>
+<body>
+    <main>
+        <header class="header">
+            <h1>新增資料 Insert New</h1>
+            <button class="btn"><i class="back"></i>返回上一頁</button>
+        </header>
+        <div class="search-bar mar-tl">
+            <div class="col-4">
+                <label>活動ID</label>
+                <p>2024072201</p>
+            </div>
+            <div class="col-4">
+                <label>活動名稱</label>
+                <p>參加指定活動</p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field">
+                        <h3>活動條件</h3>
+                        <select>
+                            <option selected disabled>請選擇</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs-container">
+                <div class="tabs-bar">
+                    <ul class="tabs">
+                        <li class="active">群組1<span class="material-symbols-outlined fz-m">Cancel</span></li>
+                        <li>英文語系國家<span class="material-symbols-outlined fz-m">Cancel</span></li>
+                    </ul>
+                    <button class="add-new-tab">新增標籤</button>
+                </div>
+                <div class="content">
+                    <div class="tab1-content active">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>頁籤群組名稱<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" value="群組1" />
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button type="button" class="changeAction btn-secondary">修改</button>
+                            </div>
+                        </div>
+                        <h2>活動顯示的前台語系</h2>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="field">
+                                    <div class="checkbox-group row-vstack">
+                                        <div class="row">
+                                            <label class="w-30" for="繁體中文(台灣)">
+                                                <input type="checkbox" id="繁體中文(台灣)" name="Language" checked />
+                                                繁體中文(台灣)
+                                            </label>
+                                            <label class="w-30" for="英文(美國)">
+                                                <input type="checkbox" id="英文(美國)" name="Language" disabled/>
+                                                英文(美國)
+                                            </label>
+                                            <label class="w-30" for="印尼文(印尼)">
+                                                <input type="checkbox" id="印尼文(印尼)" name="Language" />
+                                                印尼文(印尼)
+                                            </label>
+                                        </div>
+                                        <div class="row">
+                                            <label class="w-30" for="繁體中文(香港)">
+                                                <input type="checkbox" id="繁體中文(香港)" name="Language" checked />
+                                                繁體中文(香港)
+                                            </label>
+                                            <label class="w-30" for="英文(馬來西亞)">
+                                                <input type="checkbox" id="英文(馬來西亞)" name="Language" disabled/>
+                                                英文(馬來西亞)
+                                            </label>
+                                            <label class="w-30" for="簡體中文(中國)">
+                                                <input type="checkbox" id="簡體中文(中國)" name="Language" />
+                                                簡體中文(中國)
+                                            </label>
+                                        </div>
+                                        <div class="row">
+                                            <label class="w-30" for="泰文(泰國)">
+                                                <input type="checkbox" id="泰文(泰國)" name="Language" />
+                                                泰文(泰國)
+                                            </label>
+                                            <label class="w-30" for="日文(日本)">
+                                                <input type="checkbox" id="日文(日本)" name="Language" />
+                                                日文(日本)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>活動</h2>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>多重名稱 Event Name<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>排序<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="field">
+                                    <h3>多重內容 Event Content</h3>
+                                    <textarea rows="5" placeholder="請輸入"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="mar-bs">多重詳情 Event Details</h3>
+                                <div class="mar-0 editor"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab2-content"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="field mar-0">
+                        <h3>會員資格代碼</h3>
+                        <textarea rows="5" placeholder="請輸入"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="bottom">
+            <button class="btn-primary">確定</button>
+            <button class="btn-secondary">取消</button>
+        </div>
+    </main>
+
+    <!-- 引入 Quill 編輯器 -->
+    <script src="js/quill.js"></script>
+
+    <!-- 初始化 Quill 編輯器 -->
+    <script>
+        function initAllEditors() {
+            document.querySelectorAll('.editor').forEach(function (editorEl) {
+                if (!editorEl.classList.contains('quill-initialized') && isVisible(editorEl)) {
+                    new Quill(editorEl, {
+                        theme: 'snow',
+                        modules: {
+                            syntax: true,
+                            toolbar: [
+                                [{ 'font': [] }, { 'size': [] }],
+                                ['bold', 'italic', 'underline', 'strike'],
+                                [{ 'color': [] }, { 'background': [] }],
+                                [{ 'script': 'super' }, { 'script': 'sub' }],
+                                [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block'],
+                                [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+                                ['direction', { 'align': [] }],
+                                ['link', 'image', 'video', 'formula'],
+                                ['clean']
+                            ]
+                        }
+                    });
+                    editorEl.classList.add('quill-initialized');
+                }
+            });
+        }
+
+        function isVisible(el) {
+            return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+        }
+
+        // 頁面載入時執行一次
+        document.addEventListener('DOMContentLoaded', function () {
+            initAllEditors();
+        });
+
+        // 若有動態新增 tab，請在新增後呼叫這個 function 再初始化一次
+        // 例如：addNewTab() 後呼叫 initAllEditors();
+
+        //監測點擊tab事件，當點擊時，會先檢測".tabs-container .content"裡面是否已存在toolbar和ql-container，沒有才會初始化
+        $('.tabs li').on('click', function () {
+            const index = $(this).index();
+            $('.tabs li').removeClass('active');
+            $(this).addClass('active');
+
+            $('.tabs-container .content > div').removeClass('active');
+            const $currentTabContent = $('.tabs-container .content > div').eq(index);
+            $currentTabContent.addClass('active');
+
+            // 如果當前 tab 內容中已經有 .ql-container 或 .ql-toolbar，就不再初始化
+            if ($currentTabContent.find('.ql-container').length === 0 && $currentTabContent.find('.ql-toolbar').length === 0) {
+                initAllEditors(); // 只有在當前 tab 還沒初始化 Quill 時才執行
+            }
+        });
+    </script>
+</body>
+</html>

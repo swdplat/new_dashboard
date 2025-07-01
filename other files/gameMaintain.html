@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <title>遊戲維護功能</title>
+    <script>
+        $(document).ready(function(){
+            // 呼叫彈窗
+            //$.PopupBox.show("該項目目前已被 王曉明 使用中，請稍後再嘗試進行編輯。", "我知道了");
+
+            // 呼叫通知
+            toastMessage('新增成功');
+
+            // 滑鼠移入觸發Tooltip
+            $('.tooltip-trigger').on('mouseenter', function () {
+                showTooltip(this, 'GD017_eplay全通路、Z048_程式組、GD017_eplay全通路、Z048_程式組');
+            })
+
+            // 滑鼠移入隱藏並刪除Tooltip
+            $('.tooltip-trigger').on('mouseleave', function () {
+                hideTooltip(); // 滑鼠移出時隱藏 Tooltip
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <div class="search-bar">
+            <div>
+                <label for="event-name">遊戲名稱</label>
+                <input id="event-name" type="text" placeholder="請輸入" />
+            </div>
+            <div>
+                <label for="event-id">遊戲ID</label>
+                <input id="event-id" type="text" placeholder="請輸入" />
+            </div>
+            <button class="btn-primary">查詢 Inquiry</button>
+        </div>
+    
+        <button class="btn-secondary insert-button">新增資料 Insert New</button>
+    
+        <table class="item-list col">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th><button>遊戲名稱<i class="material-symbols-outlined">Arrow_Drop_Down</i></button></th>
+                    <th><button>遊戲ID<i class="material-symbols-outlined">Arrow_Drop_Down</i></button></th>
+                    <th>遊戲官網</th>
+                    <th>圖示網址</th>
+                    <th>主視覺網址</th>
+                    <th><button>上下架設定<i class="material-symbols-outlined">Arrow_Drop_Down</i></button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="btn-secondary">修改 Edit</button></td>
+                    <td>宮廷計</td>
+                    <td>school09</td>
+                    <td>http://www.mcact10604.com.tw</td>
+                    <td>-</td>
+                    <td>https://app.mycard520.com.tw/wp-content/uploads/2020/09/k5lCaiB.jpg</td>
+                    <td>啟用Enable</td>
+                </tr>
+                <tr>
+                    <td><button class="btn-secondary">修改 Edit</button></td>
+                    <td>英雄聯盟儲值送</td>
+                    <td>herold</td>
+                    <td>http://www.mcact10604.com.tw</td>
+                    <td>https://app.mycard520.com.tw/wp-content/uploads/2020/09/k5lCaiB.jpg</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><button class="btn-secondary">修改 Edit</button></td>
+                    <td>東京喰種xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx50</td>
+                    <td>testxxxxx</td>
+                    <td>http://www.mcact10604.com.tw</td>
+                    <td>https://app.mycard520.com.tw/wp-content/uploads/2020/09/k5lCaiB.jpg</td>
+                    <td>-</td>
+                    <td>啟用Enable</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div class="pagination">
+            <button class="first-page">第一頁</button>
+            <button class="pre-page">上一頁</button>
+            <button class="page-number active">1</button>
+            <button class="page-number">2</button>
+            <button class="page-number">3</button>
+            <button class="page-number">4</button>
+            <button class="page-number">5</button>
+            <button class="next-page">下一頁</button>
+            <button class="last-page">最後一頁</button>
+        </div>
+    </main>
+</body>
+</html>

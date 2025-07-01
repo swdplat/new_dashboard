@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link type="text/css" rel="stylesheet" href="css/daterangepicker.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <title>活動獎項查詢-新增</title>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <h1>新增一筆資料</h1>
+            <button class="btn"><i class="back"></i>返回上一頁</button>
+        </header>
+        <div class="search-bar">
+            <div class="col-4">
+                <label>活動ID</label>
+                <p>2024072201</p>
+            </div>
+            <div class="col-4">
+                <label>活動名稱</label>
+                <p>參加指定活動</p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field">
+                        <h3>送獎類型 Prize Type <span>*</span></h3>
+                        <select>
+                            <option selected disabled>請選擇</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                        </select>
+                        <select class="mar-ts">
+                            <option selected disabled>請選擇</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field">
+                        <h3>服務代號 Service</h3>
+                        <input type="text" value="" disabled />
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <h3>抽獎轉盤顯示<span>*</span></h3>
+                        <select>
+                            <option selected disabled>請選擇</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                            <option>選項</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <h3>獎項數量 Amount<span>*</span></h3>
+                        <input type="text" placeholder="請輸入" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field">
+                        <h3>點數 Points</h3>
+                        <input type="text" placeholder="請輸入" />
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field mar-0">
+                        <h3 class="hide">標題</h3>
+                        <div class="switch-field pad-0">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">單位</span>
+                            </label>
+                        </div>
+                        <label class="mar-txs">
+                            <input type="checkbox" class="switch-calendar" />
+                            未滿1點以1點計算
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <h3 class="hide">標題</h3>
+                        <div class="switch-field pad-0">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">單位</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">單位</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <h3>使用期限</h3>
+                        <label>
+                            <input type="text" class="calendar" autocomplete="off" placeholder="開始時間 - 結束時間">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="toggle-container" data-custom-value="custom">
+                <div class="main-controlled" data-enabled-value="enabled">
+                    <div class="field mar-0">
+                        <h3>中獎圖示<span>*</span></h3>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" class="toggle-group" name="toggleExample" value="disabled" checked>
+                                預設
+                            </label>
+                            <label>
+                                <input type="radio" class="toggle-group" name="toggleExample" value="disabled">
+                                不顯示
+                            </label>
+                            <label>
+                                <input type="radio" class="toggle-group" name="toggleExample" value="enabled">
+                                自訂
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="controlled-inputs mar-ts">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="field">
+                                <h3>圖示連結</h3>
+                                <input type="text" placeholder="請輸入" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs-container">
+                <div class="tabs-bar">
+                    <ul class="tabs">
+                        <li class="active">群組1<span class="material-symbols-outlined fz-m">Cancel</span></li>
+                        <li>英文語系國家<span class="material-symbols-outlined fz-m">Cancel</span></li>
+                    </ul>
+                    <button class="add-new-tab">新增標籤</button>
+                </div>
+                <div class="content">
+                    <div class="tab1-content active">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>頁籤群組名稱<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" value="群組1" />
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <button type="button" class="changeAction btn-secondary">修改</button>
+                            </div>
+                        </div>
+                        <h2>活動顯示的前台語系</h2>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="field">
+                                    <div class="checkbox-group row-vstack">
+                                        <div class="row">
+                                            <label class="w-30" for="繁體中文(台灣)">
+                                                <input type="checkbox" id="繁體中文(台灣)" name="Language" checked />
+                                                繁體中文(台灣)
+                                            </label>
+                                            <label class="w-30" for="英文(美國)">
+                                                <input type="checkbox" id="英文(美國)" name="Language" disabled/>
+                                                英文(美國)
+                                            </label>
+                                            <label class="w-30" for="印尼文(印尼)">
+                                                <input type="checkbox" id="印尼文(印尼)" name="Language" />
+                                                印尼文(印尼)
+                                            </label>
+                                        </div>
+                                        <div class="row">
+                                            <label class="w-30" for="繁體中文(香港)">
+                                                <input type="checkbox" id="繁體中文(香港)" name="Language" checked />
+                                                繁體中文(香港)
+                                            </label>
+                                            <label class="w-30" for="英文(馬來西亞)">
+                                                <input type="checkbox" id="英文(馬來西亞)" name="Language" disabled/>
+                                                英文(馬來西亞)
+                                            </label>
+                                            <label class="w-30" for="簡體中文(中國)">
+                                                <input type="checkbox" id="簡體中文(中國)" name="Language" />
+                                                簡體中文(中國)
+                                            </label>
+                                        </div>
+                                        <div class="row">
+                                            <label class="w-30" for="泰文(泰國)">
+                                                <input type="checkbox" id="泰文(泰國)" name="Language" />
+                                                泰文(泰國)
+                                            </label>
+                                            <label class="w-30" for="日文(日本)">
+                                                <input type="checkbox" id="日文(日本)" name="Language" />
+                                                日文(日本)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>獎項</h2>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>獎項名稱 Prize Name<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>備註 Remark<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="field">
+                                    <h3>虛寶說明</h3>
+                                    <textarea rows="5" placeholder="請輸入"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>標題<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>訊息文字<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field">
+                                    <h3>按鈕名稱<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                            <div class="f-grow">
+                                <div class="field">
+                                    <h3>按鈕連結<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="field mar-0">
+                                    <h3>背包按鈕名稱<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                            <div class="f-grow">
+                                <div class="field mar-0">
+                                    <h3>背包按鈕連結<span>*</span></h3>
+                                    <input type="text" placeholder="請輸入" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab2-content">
+                        
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="bottom">
+            <button class="btn-primary">確定</button>
+            <button class="btn-secondary">取消</button>
+        </div>
+    </main>
+</body>
+</html>

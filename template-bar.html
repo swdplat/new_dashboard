@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link type="text/css" rel="stylesheet" href="css/default.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/dual-listbox.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
+    <script type="text/javascript" src="js/searchSelect.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <script type="text/javascript" src="./js/chart.min.js"></script>
+    <title>橫向長條圖</title>
+    <style>
+      /* 這是nav */
+      .nav_bar {
+        background-color: #486ef8;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.7;
+      }
+
+      /* 這是長條圖的css */
+      .main-table {
+        width: 90%;
+        margin: auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        cursor: pointer;
+      }
+
+      .row-title {
+        width: 25%;
+        font-weight: bold;
+        color: #355265;
+      }
+
+      .row-count {
+        width: 25%;
+        color: #355265;
+      }
+
+      .row-bar {
+        width: 30%;
+        height: 10px;
+        background: #cfd9e4;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      .row-bar-fill {
+        height: 100%;
+        background: #6f78c6;
+      }
+
+      .row-rate {
+        width: 20%;
+        color: #355265;
+      }
+
+      .sub-table {
+        display: none;
+        background: #f0f4f8;
+        margin: 10px 0 20px 0;
+        padding: 10px 20px;
+        border-radius: 4px;
+      }
+
+      canvas {
+        width: 500px !important;
+        height: 100px !important; /* 或 150px，不要只靠 auto */
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav_bar">
+      <div class="logo">驗證碼發送查詢 DashBoard</div>
+      <div class="nav-links">
+        <a href="./template-tabs.html">頁籤部件</a>
+        <a href="./template-search_form.html">搜尋表單部件</a>
+        <a href="./template-statistic.html">資料統計欄位部件</a>
+        <a href="./template-chart.html">折線圖部件</a>
+        <a href="./template-bar.html">長條圖部件</a>
+      </div>
+    </nav>
+    <main>
+      <header class="header">
+        <h1>橫向長條圖 Bar</h1>
+      </header>
+      <form>
+        <div class="main-table" id="mainTable"></div>
+      </form>
+    </main>
+    <script>
+      const data = [
+        {
+          title: "客服後台發送",
+          count: 1200,
+          rate: 40.78,
+          sub: [
+            { label: "Taiwan", count: 1200, rate: 40.78 },
+            { label: "China", count: 243, rate: 99.18 },
+          ],
+        },
+        {
+          title: "會員註冊",
+          count: 243,
+          rate: 99.18,
+          sub: [{ label: "China", count: 243, rate: 99.18 }],
+        },
+        {
+          title: "OTP 取代 mySafe",
+          count: 46,
+          rate: 93.48,
+          sub: [{ label: "Hong Kong", count: 46, rate: 93.48 }],
+        },
+      ];
+
+      $(function () {
+        data.forEach((item, index) => {
+          const barWidth = item.rate;
+          const html = `
+          <div class="row" data-index="${index}">
+            <div class="row-title">▼ ${item.title}</div>
+            <div class="row-count">${item.count}</div>
+            <div class="row-bar"><div class="row-bar-fill" style="width:${barWidth}%"></div></div>
+            <div class="row-rate">${item.rate}%</div>
+          </div>
+          <div class="sub-table" id="sub-${index}">
+            <canvas id="chart-${index}"></canvas>
+          </div>
+        `;
+          $("#mainTable").append(html);
+        });
+
+        $(".row").on("click", function () {
+          const idx = $(this).data("index");
+          const $sub = $("#sub-" + idx);
+          $sub.slideToggle(200, function () {
+            if (!$sub.data("loaded")) {
+              setTimeout(() => {});
+              const ctx = document
+                .getElementById("chart-" + idx)
+                .getContext("2d");
+              const chartData = data[idx].sub;
+              new Chart(ctx, {
+                type: "bar",
+                data: {
+                  labels: chartData.map((d) => d.label),
+                  datasets: [
+                    {
+                      label: "發送數量",
+                      data: chartData.map((d) => d.count),
+                      backgroundColor: "#6f78c6",
+                    },
+                  ],
+                },
+                options: {
+                  indexAxis: "y",
+                  responsive: true,
+                  plugins: { legend: { display: false } },
+                  scales: { x: { beginAtZero: true } },
+                },
+              });
+              $sub.data("loaded", true);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

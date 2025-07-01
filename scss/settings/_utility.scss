@@ -1,0 +1,53 @@
+.hide {
+    visibility: hidden;
+}
+
+.f-grow {
+    flex-grow: 1;
+}
+
+//讓頁面內容寬度不會受瀏覽器的scrollbar影響
+html {
+    scrollbar-gutter: stable;
+}
+
+.wrap {
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+}
+
+.fill-icon {
+    font-variation-settings: 'FILL'1;
+
+    &.waring {
+        color: #F0D86E;
+    }
+}
+
+//Google icon文字大小控制
+.material-symbols-outlined {
+    //文字icon預設為24px
+
+    &.fz-m {
+        font-size: 16px;
+    }
+
+    &.fz-l {
+        font-size: 32px;
+    }
+}
+
+.d-flex {
+    display: flex;
+    gap: 30px;
+}
+
+.danger {
+    color: #EB6859;
+
+    button {
+        color: #EB6859;
+        border-color: #EB6859;
+    }
+}

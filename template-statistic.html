@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link type="text/css" rel="stylesheet" href="css/default.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/statistic.css" />
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <title>資料統計欄</title>
+
+    <style>
+      /* 這是nav */
+      .nav_bar {
+        background-color: #486ef8;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav_bar">
+      <div class="logo">驗證碼發送查詢 DashBoard</div>
+      <div class="nav-links">
+        <a href="./template-tabs.html">頁籤部件</a>
+        <a href="./template-search_form.html">搜尋表單部件</a>
+        <a href="./template-statistic.html">資料統計欄位部件</a>
+        <a href="./template-chart.html">折線圖部件</a>
+        <a href="./template-bar.html">長條圖部件</a>
+      </div>
+    </nav>
+    <main>
+      <header class="header">
+        <h1>資料統計欄</h1>
+      </header>
+      <form>
+        <div class="outer">
+          <div class="statistic">
+            <div class="statistic_inner">
+              <div class="statistic_card">
+                <div class="statistic_title">
+                  <h3>發送數量</h3>
+                </div>
+                <div class="statistic_number" id="sendCount">0</div>
+              </div>
+              <div class="statistic_card">
+                <div class="statistic_title">
+                  <h3>成功數量</h3>
+                </div>
+                <div class="statistic_number" id="successCount">0</div>
+              </div>
+              <div class="statistic_card">
+                <div class="statistic_title">
+                  <h3>送達率</h3>
+                </div>
+                <div class="statistic_number" id="rate">0%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script>
+      // 模擬資料
+      let fakeData = {
+        sendCount: 56,
+        successCount: 57,
+        rate: "99%",
+      };
+
+      // 模擬AJAX請求
+      $(function () {
+        setTimeout(function () {
+          $("#sendCount").text(fakeData.sendCount);
+          $("#successCount").text(fakeData.successCount);
+          $("#rate").text(fakeData.rate);
+        }, 500); //模擬延遲毫秒
+      });
+    </script>
+  </body>
+</html>

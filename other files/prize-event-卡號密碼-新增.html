@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/dual-listbox.js"></script>
+    <title>設定活動條件</title>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <button class="btn"><i class="back"></i>返回上一頁</button>
+            <h1 class="mar-Y">設定活動條件 Event Requirement</h1>
+        </header>
+        <form>
+            <div class="row">
+                <div class="field">
+                    <label>
+                        <input type="checkbox" class="switch-limit" />
+                        是否填專屬碼
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field">
+                        <label>
+                            <input type="checkbox" class="switch-limit" />
+                            會員盤數領獎限制
+                        </label>
+                        <div class="switch-field">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">盤</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">次</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <label>
+                            <input type="checkbox" class="switch-limit" />
+                            會員天數領獎限制
+                        </label>
+                        <div class="switch-field">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">天</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">次</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <label>
+                            <input type="checkbox" class="switch-limit" />
+                            遊戲帳號領獎次數上限
+                        </label>
+                        <div class="switch-field">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">天</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">次</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="toggle-context">
+                <div class="wrap">
+                    <div class="field">
+                        <div class="row">
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" id="option1" class="changeContext" value="option1" checked>
+                                    依卡別
+                                </label>
+                                <label>
+                                    <input type="radio" id="option2" class="changeContext" value="option2">
+                                    依通路
+                                </label>
+                                <label>
+                                    <input type="radio" id="option3" class="changeContext" value="option3">
+                                    依卡號區間
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="change1">
+                        <div class="listbox-wrap col">
+                            <div class="dual-listbox-container mar-0">
+                                <div class="unset-wrapper">
+                                    <h3>可供選擇的項目</h3>
+                                    <div class="searchbar">
+                                        <input type="search" placeholder="搜尋..." />
+                                        <p class="unset-counter"></p>
+                                        <div class="trailing-element">
+                                            <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>台灣</li>
+                                        <li>中國</li>
+                                        <li>香港</li>
+                                        <li>澳門</li>
+                                        <li>新加坡</li>
+                                        <li>馬來西亞</li>
+                                        <li>泰國</li>
+                                        <li>印尼</li>
+                                        <li>菲律賓</li>
+                                        <li>越南</li>
+                                        <li>全球</li>
+                                    </ul>
+                                </div>
+                                <div class="control-wrapper">
+                                    <button type="button" class="set"><span class="material-symbols-outlined fz-l">chevron_right</span></button>
+                                    <button type="button" class="set-all"><span
+                                            class="material-symbols-outlined fz-l">keyboard_double_arrow_right</span></button>
+                                    <button type="button" class="unset-all"><span
+                                            class="material-symbols-outlined fz-l">keyboard_double_arrow_left</span></button>
+                                    <button type="button" class="unset"><span class="material-symbols-outlined fz-l">chevron_left</span></button>
+                                </div>
+                                <div class="set-wrapper">
+                                    <h3>已選擇的項目</h2>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." />
+                                            <p class="set-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="change2">
+                        <div class="row row-hcenter">
+                            <div class="listbox-wrap col mar-ts">
+                                <div class="field mar-0">
+                                    <label>
+                                        <input type="checkbox" class="switch-dual-listbox switch-limit" />
+                                        店家群組 Shop Type
+                                    </label>
+                                </div>
+                                <div class="dual-listbox-container mar-0 disabled pad-ts">
+                                    <div class="unset-wrapper">
+                                        <h3>可供選擇的項目</h3>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." disabled />
+                                            <p class="unset-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                            <li>香港</li>
+                                            <li>澳門</li>
+                                            <li>新加坡</li>
+                                            <li>馬來西亞</li>
+                                            <li>泰國</li>
+                                            <li>印尼</li>
+                                            <li>菲律賓</li>
+                                            <li>越南</li>
+                                            <li>全球</li>
+                                        </ul>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button type="button" class="set"><span class="material-symbols-outlined fz-l">chevron_right</span></button>
+                                        <button type="button" class="set-all"><span
+                                                class="material-symbols-outlined fz-l">keyboard_double_arrow_right</span></button>
+                                        <button type="button" class="unset-all"><span
+                                                class="material-symbols-outlined fz-l">keyboard_double_arrow_left</span></button>
+                                        <button type="button" class="unset"><span class="material-symbols-outlined fz-l">chevron_left</span></button>
+                                    </div>
+                                    <div class="set-wrapper">
+                                        <h3>已選擇的項目</h3>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." disabled />
+                                            <p class="set-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                <div class="field mar-ts">
+                                    <h3>店家群組 ShopType</h3>
+                                    <select disabled>
+                                        <option selected disabled>請選擇</option>
+                                        <option>選項</option>
+                                        <option>選項</option>
+                                        <option>選項</option>
+                                    </select>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row row-hcenter">
+                            <div class="listbox-wrap col">
+                                <div class="field mar-0">
+                                    <label>
+                                        <input type="checkbox" class="switch-dual-listbox" />
+                                        發卡下游廠商 Downstream Merchant
+                                    </label>
+                                </div>
+                                <div class="dual-listbox-container mar-0 disabled pad-ts">
+                                    <div class="unset-wrapper">
+                                        <h3>可供選擇的項目</h3>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." disabled />
+                                            <p class="unset-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                            <li>香港</li>
+                                            <li>澳門</li>
+                                            <li>新加坡</li>
+                                            <li>馬來西亞</li>
+                                            <li>泰國</li>
+                                            <li>印尼</li>
+                                            <li>菲律賓</li>
+                                            <li>越南</li>
+                                            <li>全球</li>
+                                        </ul>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button type="button" class="set"><span class="material-symbols-outlined fz-l">chevron_right</span></button>
+                                        <button type="button" class="set-all"><span
+                                                class="material-symbols-outlined fz-l">keyboard_double_arrow_right</span></button>
+                                        <button type="button" class="unset-all"><span
+                                                class="material-symbols-outlined fz-l">keyboard_double_arrow_left</span></button>
+                                        <button type="button" class="unset"><span class="material-symbols-outlined fz-l">chevron_left</span></button>
+                                    </div>
+                                    <div class="set-wrapper">
+                                        <h3>已選擇的項目</h3>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." disabled />
+                                            <p class="set-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="dual-listbox-container mar-0 disabled pad-tm">
+                                    <div class="unset-wrapper">
+                                        <h3>可供選擇的項目</h3>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." disabled />
+                                            <p class="unset-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>台灣</li>
+                                            <li>中國</li>
+                                            <li>香港</li>
+                                            <li>澳門</li>
+                                            <li>新加坡</li>
+                                            <li>馬來西亞</li>
+                                            <li>泰國</li>
+                                            <li>印尼</li>
+                                            <li>菲律賓</li>
+                                            <li>越南</li>
+                                            <li>全球</li>
+                                        </ul>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <button type="button" class="set"><span class="material-symbols-outlined fz-l">chevron_right</span></button>
+                                        <button type="button" class="set-all"><span
+                                                class="material-symbols-outlined fz-l">keyboard_double_arrow_right</span></button>
+                                        <button type="button" class="unset-all"><span
+                                                class="material-symbols-outlined fz-l">keyboard_double_arrow_left</span></button>
+                                        <button type="button" class="unset"><span class="material-symbols-outlined fz-l">chevron_left</span></button>
+                                    </div>
+                                    <div class="set-wrapper">
+                                        <h3>已選擇的項目</h3>
+                                        <div class="searchbar">
+                                            <input type="search" placeholder="搜尋..." disabled />
+                                            <p class="set-counter"></p>
+                                            <div class="trailing-element">
+                                                <button type="button" class="btn-secondary small" data-add-button>清除選取</button>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="change3">
+                        <table class="item-list col-6 mar-bxl">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>卡區間起始</th>
+                                    <th>卡區間結束</th>
+                                    <th>參加次數</th>
+                                </tr>
+                            </thead>
+                            <tbody data-section="dynamic-cardNumber">
+                                <tr class="data-row">
+                                    <td><button type="button" class="btn-secondary btn-delete">刪除</button></td>
+                                    <td>
+                                        <div class="field mar-0"><input type="text" placeholder="" /></div>
+                                    </td>
+                                    <td>
+                                        <div class="field mar-0"><input type="text" placeholder="" /></div>
+                                    </td>
+                                    <td>
+                                        <div class="field mar-0"><input type="text" placeholder="" /></div>
+                                    </td>
+                                </tr>
+                                <tr class="add-button-row">
+                                    <td colspan="12">
+                                        <div class="row row-vcenter">
+                                            <button type="button" class="btn-secondary" data-add-button>新增一筆</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="upload-container">
+                                <span>上傳檔案 (附檔名為txt)</span>
+                                <label href="javascript:;" class="a-upload">
+                                    <input type="file" id="fileInput">選擇檔案
+                                </label>
+                                <span class="showFileName"></span>
+                                <p class="fileerrorTip">檔案類型錯誤或未上傳檔案！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="bottom">
+            <button class="btn-primary">下一步</button>
+            <!-- <button class="btn-secondary">取消</button> -->
+        </div>
+    </main>
+</body>
+</html>

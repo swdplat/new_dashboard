@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <title>設定活動條件</title>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <button class="btn"><i class="back"></i>返回上一頁</button>
+            <h1 class="mar-Y">設定活動條件 Event Requirement</h1>
+        </header>
+        <div class="search-bar mar-tl">
+            <div class="col-4">
+                <label>活動ID</label>
+                <p>2024072201</p>
+            </div>
+            <div class="col-4">
+                <label>活動名稱</label>
+                <p>參加指定活動</p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field">
+                        <label>
+                            <input type="checkbox" class="switch-limit" />
+                            會員盤數領獎限制
+                        </label>
+                        <div class="switch-field">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">盤</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">次</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <label>
+                            <input type="checkbox" class="switch-limit" />
+                            會員天數領獎限制
+                        </label>
+                        <div class="switch-field">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">天</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">次</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field">
+                        <label>
+                            <input type="checkbox" class="switch-limit" />
+                            遊戲帳號領獎次數上限
+                        </label>
+                        <div class="switch-field">
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">天</span>
+                            </label>/
+                            <label>
+                                <input type="text" placeholder="" disabled />
+                                <span class="unit">次</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="field mar-0">
+                        <textarea rows="5" placeholder="請輸入">金額開始, 金額結束, 次數</textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="bottom">
+            <button class="btn-primary">新增</button>
+            <button class="btn-secondary">取消</button>
+        </div>
+    </main>
+</body>
+</html>

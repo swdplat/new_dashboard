@@ -1,0 +1,19 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+
+.col {
+  width: 100%;
+}
+.col-3 {
+  width: calc((100% - 60px) / 3);
+}
+.col-5 {
+  width: calc((100% - 30px) / 2);
+}
+.col-8 {
+  width: 66%;
+}/*# sourceMappingURL=grid.css.map */

@@ -1,0 +1,231 @@
+// Header
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    & > h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        order: 2;
+    }
+    .btn {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 5px;
+        i {
+            width: 16px;
+            height: 16px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 16px 16px;
+            display: block;
+            &.back {
+                background-image: url('../images/back.svg');
+            }
+        }
+    }
+}
+
+// 搜尋條
+.search-bar {
+    padding: 20px 30px;
+    margin: 30px 0 40px;
+    background-color: #F7F7F7;
+    border: 1px solid #D5D7DF;
+    border-radius: 10px;
+    min-width: min-content;
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        label {
+            font-weight: 600;
+            color: #000;
+            white-space: nowrap;
+            line-height: normal;
+        }
+        p {
+            line-height: 280%;
+        }
+        input[type="text"] {
+            padding: 10px 15px;
+            height: 37px;
+            border-radius: 4px;
+            border: 1px solid #D5D7DF;
+            background-color: #FFF;
+        }
+        select {
+            padding: 10px 15px;
+            height: 37px;
+            border-radius: 4px;
+            border: 1px solid #D5D7DF;
+            background-color: #FFF;
+            background-image: url('../images/dropdown.svg');
+            background-position: right 15px center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .field {
+        height: 100%;
+    }
+
+    button {
+        align-self: flex-end;
+    }
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #F0D86E;
+    background-color: #FCF7D4;
+}
+
+.upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .a-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 6px;
+        background-color: #fff;
+        border: 1px solid #333;
+        color: #333;
+        cursor: pointer;
+    }
+
+    p {
+        display: none;
+        color: red;
+    }
+}
+
+.controlled-inputs-box {
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+//文字編輯器樣式調整
+.ql-toolbar {
+    border-radius: 4px 4px 0 0;
+}
+
+.ql-container {
+    border-radius: 0 0 4px 4px;
+}
+
+.editor {
+    margin-bottom: 40px;
+    height: 400px;
+    overflow: auto;
+}
+
+// .bg-color-n {
+//     background-color: unset !important;
+// }
+
+/* Dual Listbox */
+.dual-listbox-container {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    .unset-wrapper, .set-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h3 {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .searchbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            input {
+                padding: 10px 15px;
+                border-radius: 4px;
+                background-color: #fff;
+                border: 1px solid #d5d7df;
+                width: 100%;
+                max-width: 200px;
+                &:disabled {
+                    background-color: #EFEFEF;
+                    cursor: not-allowed;
+                }
+            }
+
+            .trailing-element {
+                flex-grow: 1;
+                text-align: end;
+            }
+        }
+        ul {
+            height: 300px;
+            border-radius: 4px;
+            border: 1px solid #D5D7DF;
+            background-color: #fff;
+            overflow-Y: auto;
+            li {
+                padding: 10px 15px;
+                border-bottom: 1px solid #D5D7DF;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &.selected {
+                    color: #FFF;
+                    background-color: #486EF8;
+                    .edit .material-symbols-outlined {
+                        color: #FEFEFE;
+                    }
+                }
+            }
+        }
+    }
+    .control-wrapper {
+        margin: 0 30px 69px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &.disabled {
+        ul, li, input {
+            background-color: #EFEFEF;
+            cursor: not-allowed;
+        }
+        button {
+            cursor: not-allowed;
+        }
+    }
+}

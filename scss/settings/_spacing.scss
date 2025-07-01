@@ -1,0 +1,138 @@
+.mar {
+    
+    //外距歸0
+    &-0 {
+        margin: 0 !important;
+    }
+
+    &-t0 {
+        margin-top: 0 !important;
+    }
+
+    &-b0 {
+        margin-bottom: 0 !important;
+    }
+
+    //TOP
+    &-txs {
+        margin-top: 5px;
+    }
+
+    &-ts {
+        margin-top: 10px;
+    }
+
+    &-tm {
+        margin-top: 20px;
+    }
+
+    &-tl {
+        margin-top: 30px;
+    }
+
+    &-txl {
+        margin-top: 40px;
+    }
+
+    //BOTTOM
+    &-bxs {
+        margin-bottom: 5px;
+    }
+
+    &-bs {
+        margin-bottom: 10px;
+    }
+
+    &-bm {
+        margin-bottom: 20px;
+    }
+
+    &-bl {
+        margin-bottom: 30px;
+    }
+
+    &-bxl {
+        margin-bottom: 40px;
+    }
+
+    //y軸上下間距
+    &-yl {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    //x軸兩邊間距
+    &-xl {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    //特殊尺寸(差距補全)
+    &-spt16 {
+        margin-top: 16px;
+    }
+}
+
+.pad {
+    
+    //內距歸0
+    &-0 {
+        padding: inherit !important;
+    }
+
+    //TOP
+    &-txs {
+        padding-top: 5px;
+    }
+
+    &-ts {
+        padding-top: 10px;
+    }
+
+    &-tm {
+        padding-top: 20px;
+    }
+
+    &-tl {
+        padding-top: 30px;
+    }
+
+    &-txl {
+        padding-top: 40px;
+    }
+
+    //BOTTOM
+    &-bxs {
+        padding-bottom: 5px;
+    }
+
+    &-bs {
+        padding-bottom: 10px;
+    }
+
+    &-bm {
+        padding-bottom: 20px;
+    }
+
+    &-bl {
+        padding-bottom: 30px;
+    }
+
+    &-bxl {
+        padding-bottom: 40px;
+    }
+
+    //y軸上下間距
+    &-yl {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    //x軸兩邊間距
+    &-xl {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    //特殊尺寸(差距補全)
+}

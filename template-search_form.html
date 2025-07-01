@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link type="text/css" rel="stylesheet" href="css/default.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./js/jquery-ui-1.13.2/jquery-ui.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/highlight.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/dual-listbox.js"></script>
+    <script type="text/javascript" src="js/toast-message.js"></script>
+    <script type="text/javascript" src="js/tooltip.js"></script>
+    <script type="text/javascript" src="js/searchSelect.js"></script>
+    <script type="text/javascript" src="js/prize.js"></script>
+    <title>搜尋表單 Search Form</title>
+
+    <style>
+      /* 這是nav */
+      .nav_bar {
+        background-color: #486ef8;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        opacity: 0.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav_bar">
+      <div class="logo">驗證碼發送查詢 DashBoard</div>
+      <div class="nav-links">
+        <a href="./template-tabs.html">頁籤部件</a>
+        <a href="./template-search_form.html">搜尋表單部件</a>
+        <a href="./template-statistic.html">資料統計欄位部件</a>
+        <a href="./template-chart.html">折線圖部件</a>
+        <a href="./template-bar.html">長條圖部件</a>
+      </div>
+    </nav>
+    <main>
+      <header class="header">
+        <h1>搜尋表單 Search Form</h1>
+      </header>
+      <form>
+        <div class="row">
+          <div class="col-4">
+            <div class="field">
+              <h3>發送管道</h3>
+              <select>
+                <option value="">發送管道</option>
+                <option value="">SMS</option>
+                <option value="">E-mail</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="field">
+              <h3>發送類別</h3>
+              <select>
+                <option value="">發送類別</option>
+                <option value="">0 客服後台發送</option>
+                <option value="">1 會員註冊</option>
+                <option value="">2 OTP取代mySafe</option>
+                <option value="">3 修改密碼</option>
+                <option value="">4 忘記密碼</option>
+                <option value="">5 忘記支付密碼</option>
+                <option value="">6 修改支付密碼</option>
+                <option value="">7 線上購點交易查詢</option>
+                <option value="">8 綁定行動裝置</option>
+                <option value="">9 生物辨識</option>
+                <option value="">10 自動儲值修改補差額</option>
+                <option value="">11 金流簡訊驗證</option>
+                <option value="">12 會員登入</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="field">
+              <h3>指定時間</h3>
+              <select id="searchType">
+                <option value="時間區間">時間區間</option>
+                <option value="近1小時">近1小時</option>
+                <option value="近3小時">近3小時</option>
+                <option value="近6小時">近6小時</option>
+                <option value="今天至現在">今天至現在</option>
+                <option value="custom">指定時間</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <h3>設定區間</h3>
+          <label>
+            <input
+              type="text"
+              class="calendar"
+              autocomplete="off"
+              placeholder="開始時間 - 結束時間"
+              id="dateRange"
+              disabled
+            />
+          </label>
+        </div>
+        <button class="btn-primary">查詢 Inquiry</button>
+      </form>
+    </main>
+
+    <script>
+      $(document).ready(function () {
+        $("#searchType").change(function () {
+          const selected = $(this).val();
+          if (selected === "custom") {
+            $("#dateRange").prop("disabled", false);
+          } else {
+            $("#dateRange").prop("disabled", true);
+          }
+        });
+      });
+    </script>
+    <script>
+      // 取得今天日期
+      const today = new Date();
+
+      // 計算一年前的日期
+      const lastYear = new Date();
+      lastYear.setFullYear(today.getFullYear() - 1);
+
+      // 將日期轉為 yyyy-mm-dd 格式
+      function formatDate(date) {
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, "0");
+        const dd = String(date.getDate()).padStart(2, "0");
+        return `${yyyy}-${mm}-${dd}`;
+      }
+
+      // 設定 min / max 限制
+      const input = document.getElementById("dateRange");
+      input.min = formatDate(lastYear);
+      input.max = formatDate(today);
+    </script>
+  </body>
+</html>

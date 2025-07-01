@@ -1,0 +1,55 @@
+// 日曆
+.field-calendar {
+    text-indent: 25px;
+    background-image: url('../images/calendar.svg');
+    background-position: left 15px center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+.daterangepicker .drp-calendar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.daterangepicker .drp-calendar .calendar-time {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    order: 1;
+    width: 100%;
+}
+.daterangepicker .drp-calendar .calendar-time select {
+    background: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    padding: 2px;
+    outline: 0;
+    font-size: 12px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    flex: 1;
+    text-align: center;
+    box-sizing: border-box;
+}
+.daterangepicker .drp-calendar .calendar-table {
+    order: 2;
+}
+.daterangepicker .drp-calendar .calendar-table td {
+    width: 32px;
+    height: 32px;
+}
+.daterangepicker .drp-calendar .calendar-table td.start-date {
+    border-radius: 6px 0 0 6px;
+}
+.daterangepicker .drp-calendar .calendar-table td.end-date {
+    border-radius: 0 6px 6px 0;
+}
+.daterangepicker .drp-calendar .calendar-table td.in-range {
+    background-color: #F5F8FF;
+}
+.daterangepicker .drp-calendar .calendar-table td.active {
+    background-color: #367BF5;
+}
+.daterangepicker .drp-calendar .calendar-table td.active:hover {
+    background-color: #2B63C5;
+}

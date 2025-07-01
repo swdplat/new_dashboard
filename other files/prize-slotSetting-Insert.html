@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link type="text/css" rel="stylesheet" href="css/daterangepicker.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.min.js"></script>
+    <script type="text/javascript" src="js/components.js"></script>
+    <title>設定獎項盤數-新增</title>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <h1>新增盤數</h1>
+            <button class="btn"><i class="back"></i>返回上一頁</button>
+        </header>
+        <div class="search-bar">
+            <div class="col-4">
+                <label>活動ID</label>
+                <p>2024072201</p>
+            </div>
+            <div class="col-4">
+                <label>活動名稱</label>
+                <p>參加指定活動</p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-4">
+                    <div class="field mar-0">
+                        <h3>日期區間起迄 Duration</h3>
+                        <label class="mar-bxs">
+                            <input type="text" class="calendar" autocomplete="off" placeholder="開始時間 - 結束時間">
+                        </label>
+                        <span class="danger">日期未填寫</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field mar-0">
+                        <h3>盤數 Slot Amount</h3>
+                        <input class="mar-bxs" type="text" placeholder="請輸入" />
+                        <span class="danger">請輸入盤數</span>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="field mar-0">
+                        <h3>區間 Period</h3>
+                        <div class="switch-field pad-0">
+                            <label>
+                                <input type="text" placeholder="請輸入"/>
+                                <span class="unit"></span>
+                            </label>-
+                            <label>
+                                <input type="text" placeholder="請輸入"/>
+                                <span class="unit"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="item-list col mar-spt16">
+                <thead>
+                    <tr>
+                        <th>獎項名稱 Prize Name</th>
+                        <th>貨付款獎項資訊 Prize Payment Info</th>
+                        <th>獎項數量 Amount</th>
+                        <th>數量 Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>092702</td>
+                        <td>PRZ00007558</td>
+                        <td>20</td>
+                        <td class="field">
+                            <input type="text" placeholder="請輸入" />  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>點卡擴增</td>
+                        <td>PRZ00007561</td>
+                        <td>10</td>
+                        <td class="field">
+                            <input type="text" placeholder="請輸入" />  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>MCCoupon擴增</td>
+                        <td>PRZ00007562</td>
+                        <td>10</td>
+                        <td class="field">
+                            <input type="text" placeholder="請輸入" />  
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </form>
+        
+        <div class="bottom">
+            <button class="btn-primary">確定</button>
+            <button class="btn-secondary">取消</button>
+        </div>
+    </main>
+</body>
+</html>
