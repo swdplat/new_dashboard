@@ -64,7 +64,61 @@
         background: #fff;
         border-radius: 8px;
         padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid #d5d7df;
+      }
+
+      .top-table {
+        width: 90%;
+        margin: auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 5px 20px;
+        border: 1px solid #d5d7df;
+      }
+
+      .row-topbar {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+      }
+
+      .row-toptitle {
+        width: 17%;
+        font-weight: bold;
+        color: #000000;
+        font-size: 20px;
+      }
+
+      .row-topcount {
+        font-weight: bold;
+        color: #000000;
+        font-size: 20px;
+        width: 25%;
+      }
+
+      .top-bar {
+        width: 36%;
+        color: #000000;
+        font-size: 20px;
+      }
+
+      .row-toprate {
+        font-weight: bold;
+        color: #000000;
+        font-size: 20px;
+      }
+
+      /* .row-bar {
+        width: 30%;
+        height: 10px;
+        background: #cfd9e4;
+        position: relative;
+        margin-right: 20px;
+      } */
+
+      .row-bar-fill {
+        height: 100%;
+        background: #6f78c6;
       }
 
       .row {
@@ -75,7 +129,7 @@
       }
 
       .row-title {
-        width: 25%;
+        width: 15%;
         font-weight: bold;
         color: #355265;
       }
@@ -112,8 +166,8 @@
       }
 
       canvas {
-        width: 500px !important;
-        height: 100px !important; /* 或 150px，不要只靠 auto */
+        width: 400px !important;
+        height: 200px !important;
       }
     </style>
   </head>
@@ -133,6 +187,14 @@
         <h1>橫向長條圖 Bar</h1>
       </header>
       <form>
+        <div class="top-table">
+          <div class="row-topbar">
+            <div class="row-toptitle">簡訊分類</div>
+            <div class="row-topcount">發送數量</div>
+            <div class="top-bar"></div>
+            <div class="row-toprate">送達率</div>
+          </div>
+        </div>
         <div class="main-table" id="mainTable"></div>
       </form>
     </main>
