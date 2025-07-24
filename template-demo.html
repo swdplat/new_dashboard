@@ -10,6 +10,7 @@
     />
     <link type="text/css" rel="stylesheet" href="css/default.min.css" />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/statistic.css" />
     <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="js/moment.min.js"></script>
     <script type="text/javascript" src="js/daterangepicker.min.js"></script>
@@ -21,8 +22,7 @@
     <script type="text/javascript" src="js/tooltip.js"></script>
     <script type="text/javascript" src="js/searchSelect.js"></script>
     <script type="text/javascript" src="js/prize.js"></script>
-    <script type="text/javascript" src="./js/chart.min.js"></script>
-    <title>橫向長條圖</title>
+    <title>917_驗證碼發送監控與交易風控機制增修</title>
     <style>
       /* 這是nav */
       .nav_bar {
@@ -56,8 +56,25 @@
       .nav-links a:hover {
         opacity: 0.7;
       }
+      /* 這是tab頁籤 */
+      .tabs-container .tabs-bar .tabs li {
+        height: 39px;
+      }
 
-       /* 這是橫式長條圖的樣式 */
+      /* 這是折線圖表 */
+      .chart-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: auto;
+      }
+      .diagram {
+        max-width: 100%;
+      }
+
+      /* 這是橫式長條圖的樣式 */
       .main-table {
         max-width: 900px;
         margin: auto;
@@ -159,6 +176,14 @@
         align-items: center;
         padding: 10px 0;
         cursor: pointer;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      /* 這是查詢按鈕的設計 */
+      .send-button{
+        max-width: 900px;
+        margin: auto;
       }
 
       .row-title {
@@ -199,6 +224,7 @@
       }
 
       .bar-chart {
+        /* width: 400px !important; */
         height: 400px !important;
       }
 
@@ -227,20 +253,292 @@
     </nav>
     <main>
       <header class="header">
-        <h1>橫向長條圖 Bar</h1>
+        <h1>頁籤切換 Tabs</h1>
       </header>
       <form>
-        <div class="top-table">
-          <div class="row-topbar">
-            <div class="row-toptitle">簡訊分類</div>
-            <div class="row-topcount">發送數量</div>
-            <!-- <div class="top-bar"></div> -->
-            <div class="row-toprate">送達率</div>
+        <!-- TAB -->
+        <h2>新後台 DEMO</h2>
+        <div class="tabs-container">
+          <div class="tabs-bar">
+            <ul class="tabs">
+              <li class="active">即時發送查詢</li>
+              <li>發送記錄報表</li>
+              <li>超量設定</li>
+              <li>簡訊商報表</li>
+            </ul>
+          </div>
+          <div class="content">
+            <div class="tab1-content active">
+              <form>
+                <div class="row">
+                  <div class="col-4">
+                    <div class="field">
+                      <h3>發送管道</h3>
+                      <select>
+                        <option value="">發送管道</option>
+                        <option value="">SMS</option>
+                        <option value="">E-mail</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="field">
+                      <h3>發送類別</h3>
+                      <select>
+                        <option value="發送類別">發送類別</option>
+                        <option value="客服後台發送">0 客服後台發送</option>
+                        <option value="會員註冊">1 會員註冊</option>
+                        <option value="OTP取代mySafe">2 OTP取代mySafe</option>
+                        <option value="修改密碼">3 修改密碼</option>
+                        <option value="忘記密碼">4 忘記密碼</option>
+                        <option value="忘記支付密碼">5 忘記支付密碼</option>
+                        <option value="修改支付密碼">6 修改支付密碼</option>
+                        <option value="線上購點交易查詢">
+                          7 線上購點交易查詢
+                        </option>
+                        <option value="綁定行動裝置">8 綁定行動裝置</option>
+                        <option value="生物辨識">9 生物辨識</option>
+                        <option value="自動儲值修改補差額">
+                          10 自動儲值修改補差額
+                        </option>
+                        <option value="金流簡訊驗證">11 金流簡訊驗證</option>
+                        <option value="會員登入">12 會員登入</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="field">
+                      <h3>指定時間</h3>
+                      <select id="searchType">
+                        <option value="時間區間">時間區間</option>
+                        <option value="近1小時">近1小時</option>
+                        <option value="近3小時">近3小時</option>
+                        <option value="近6小時">近6小時</option>
+                        <option value="今天至現在">今天至現在</option>
+                        <option value="custom">指定時間</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="field" style="max-width: 900px; margin: auto; margin-bottom: 40px;">
+                  <h3>設定區間</h3>
+                  <label>
+                    <input
+                      type="text"
+                      class="calendar"
+                      autocomplete="off"
+                      placeholder="開始時間 - 結束時間"
+                      id="dateRange"
+                      disabled
+                    />
+                  </label>
+                </div>
+                <div class="send-button">
+                  <button class="btn-primary">查詢 Inquiry</button>
+                </div>
+              </form>
+              <div
+                style="
+                  border-top: 2px solid rgb(215, 215, 215);
+                  width: 100%;
+                  height: 0px;
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+                "
+              ></div>
+              <form>
+                <div class="outer">
+                  <div class="statistic">
+                    <div class="statistic_inner">
+                      <div class="statistic_card">
+                        <div class="statistic_title">
+                          <h3>發送數量</h3>
+                        </div>
+                        <div class="statistic_number" id="sendCount">0</div>
+                      </div>
+                      <div class="statistic_card">
+                        <div class="statistic_title">
+                          <h3>成功數量</h3>
+                        </div>
+                        <div class="statistic_number" id="successCount">0</div>
+                      </div>
+                      <div class="statistic_card">
+                        <div class="statistic_title">
+                          <h3>送達率</h3>
+                        </div>
+                        <div class="statistic_number" id="rate">0%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form>
+                <div class="chart-container">
+                  <h3>簡訊發送數量統計圖</h3>
+                  <canvas class="diagram" id="lineChart"></canvas>
+                </div>
+              </form>
+              <form>
+                <div class="top-table">
+                  <div class="row-topbar">
+                    <div class="row-toptitle">簡訊分類</div>
+                    <div class="row-topcount">發送數量</div>
+                    <!-- <div class="top-bar"></div> -->
+                    <div class="row-toprate">送達率</div>
+                  </div>
+                </div>
+                <div class="main-table" id="mainTable"></div>
+              </form>
+            </div>
+            <div class="tab2-content">qqq</div>
+            <div class="tab3-content">eee</div>
+            <div class="tab4-content">rrr</div>
           </div>
         </div>
-        <div class="main-table" id="mainTable"></div>
       </form>
     </main>
+
+    <script>
+      $(document).ready(function () {
+        $("#searchType").change(function () {
+          const selected = $(this).val();
+          if (selected === "custom") {
+            $("#dateRange").prop("disabled", false);
+          } else {
+            $("#dateRange").prop("disabled", true);
+          }
+        });
+      });
+    </script>
+    <script>
+      // 取得今天日期
+      const today = new Date();
+
+      // 計算一年前的日期
+      const lastYear = new Date();
+      lastYear.setFullYear(today.getFullYear() - 1);
+
+      // 將日期轉為 yyyy-mm-dd 格式
+      function formatDate(date) {
+        const yyyy = date.getFullYear();
+        const mm = String(date.getMonth() + 1).padStart(2, "0");
+        const dd = String(date.getDate()).padStart(2, "0");
+        return `${yyyy}-${mm}-${dd}`;
+      }
+
+      // 設定 min / max 限制
+      const input = document.getElementById("dateRange");
+      input.min = formatDate(lastYear);
+      input.max = formatDate(today);
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        const ctx = document.getElementById("lineChart").getContext("2d");
+
+        const data = {
+          labels: [
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+          ],
+          datasets: [
+            {
+              label: "簡訊次數",
+              data: [
+                60, 130, 80, 70, 100, 90, 140, 120, 130, 80, 95, 110, 70, 60,
+              ],
+              borderColor: "#66B3FF",
+              backgroundColor: "#66B3FF",
+              tension: 0.4,
+              pointRadius: 5,
+              pointHoverRadius: 7,
+            },
+            {
+              label: "E-mail次數",
+              data: [
+                80, 100, 70, 75, 120, 100, 130, 100, 120, 50, 60, 55, 80, 75,
+              ],
+              borderColor: "#FFD306",
+              backgroundColor: "#FFD306",
+              tension: 0.4,
+              pointRadius: 5,
+              pointHoverRadius: 7,
+            },
+          ],
+        };
+
+        const config = {
+          type: "line",
+          data: data,
+          options: {
+            responsive: true,
+            plugins: {
+              tooltip: {
+                mode: "index",
+                intersect: false,
+                backgroundColor: "#333333",
+                titleColor: "#fff",
+                bodyColor: "#fff",
+              },
+              legend: {
+                position: "top",
+              },
+              title: {
+                display: false,
+              },
+            },
+            interaction: {
+              mode: "nearest",
+              axis: "x",
+              intersect: false,
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: "次數",
+                },
+              },
+            },
+          },
+        };
+
+        new Chart(ctx, config);
+      });
+    </script>
+    <script src="./js/chart.min.js"></script>
+
+    <script>
+      // 模擬資料
+      let fakeData = {
+        sendCount: 56,
+        successCount: 57,
+        rate: "99%",
+      };
+
+      // 模擬AJAX請求
+      $(function () {
+        setTimeout(function () {
+          $("#sendCount").text(fakeData.sendCount);
+          $("#successCount").text(fakeData.successCount);
+          $("#rate").text(fakeData.rate);
+        }, 500); //模擬延遲毫秒
+      });
+    </script>
+
     <script>
       const data = [
         {
